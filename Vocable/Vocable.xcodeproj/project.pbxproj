@@ -16,6 +16,11 @@
 		80639C54245B3C85006F8FC2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C53245B3C85006F8FC2 /* CoreDataStack.swift */; };
 		80639C56245B3D3E006F8FC2 /* TranscriptRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */; };
 		80639C58245B3D79006F8FC2 /* Transcript+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */; };
+		80639C5A245B3F1B006F8FC2 /* TranscriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C59245B3F1B006F8FC2 /* TranscriptController.swift */; };
+		80639C5C245B5B43006F8FC2 /* TranscriptTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C5B245B5B43006F8FC2 /* TranscriptTableViewController.swift */; };
+		80639C5F245B5B67006F8FC2 /* AddTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C5E245B5B67006F8FC2 /* AddTranscriptViewController.swift */; };
+		80639C61245B5B72006F8FC2 /* ShowTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C60245B5B72006F8FC2 /* ShowTranscriptViewController.swift */; };
+		80639C63245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C62245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		80639C53245B3C85006F8FC2 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptRepresentation.swift; sourceTree = "<group>"; };
 		80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transcript+Convenience.swift"; sourceTree = "<group>"; };
+		80639C59245B3F1B006F8FC2 /* TranscriptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptController.swift; sourceTree = "<group>"; };
+		80639C5B245B5B43006F8FC2 /* TranscriptTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTableViewController.swift; sourceTree = "<group>"; };
+		80639C5E245B5B67006F8FC2 /* AddTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTranscriptViewController.swift; sourceTree = "<group>"; };
+		80639C60245B5B72006F8FC2 /* ShowTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTranscriptViewController.swift; sourceTree = "<group>"; };
+		80639C62245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewTranscriptViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +82,21 @@
 				80639C53245B3C85006F8FC2 /* CoreDataStack.swift */,
 				80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */,
 				80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */,
+				80639C59245B3F1B006F8FC2 /* TranscriptController.swift */,
+				80639C5D245B5B48006F8FC2 /* View Controllers */,
 			);
 			path = Vocable;
+			sourceTree = "<group>";
+		};
+		80639C5D245B5B48006F8FC2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80639C5B245B5B43006F8FC2 /* TranscriptTableViewController.swift */,
+				80639C5E245B5B67006F8FC2 /* AddTranscriptViewController.swift */,
+				80639C60245B5B72006F8FC2 /* ShowTranscriptViewController.swift */,
+				80639C62245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,12 +170,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80639C5F245B5B67006F8FC2 /* AddTranscriptViewController.swift in Sources */,
+				80639C63245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift in Sources */,
 				80639C47245B3AB0006F8FC2 /* Vocable.xcdatamodeld in Sources */,
 				80639C3D245B3AB0006F8FC2 /* AppDelegate.swift in Sources */,
+				80639C5A245B3F1B006F8FC2 /* TranscriptController.swift in Sources */,
 				80639C3F245B3AB0006F8FC2 /* SceneDelegate.swift in Sources */,
 				80639C58245B3D79006F8FC2 /* Transcript+Convenience.swift in Sources */,
 				80639C56245B3D3E006F8FC2 /* TranscriptRepresentation.swift in Sources */,
+				80639C61245B5B72006F8FC2 /* ShowTranscriptViewController.swift in Sources */,
 				80639C54245B3C85006F8FC2 /* CoreDataStack.swift in Sources */,
+				80639C5C245B5B43006F8FC2 /* TranscriptTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

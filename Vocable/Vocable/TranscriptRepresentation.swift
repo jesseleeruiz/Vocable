@@ -12,4 +12,5 @@ struct TranscriptRepresentation: Codable {
     let title: String
     let text: String
     let createdAt: Date
+    let transcriptID: UUID
 }

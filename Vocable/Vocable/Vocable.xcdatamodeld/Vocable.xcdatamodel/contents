@@ -4,8 +4,9 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="transcriptID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Transcript" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Transcript" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>

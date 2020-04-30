@@ -10,18 +10,34 @@
         <!--Your Transcripts-->
         <scene sceneID="UzX-2S-br2">
             <objects>
-                <tableViewController id="Nfg-XI-bsc" sceneMemberID="viewController">
+                <tableViewController id="Nfg-XI-bsc" customClass="TranscriptTableViewController" customModule="Vocable" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qrs-Gj-dFD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TranscriptCell" id="gcj-MY-FEe">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TranscriptCell" textLabel="q5P-LJ-6wo" detailTextLabel="sua-3c-POC" style="IBUITableViewCellStyleSubtitle" id="gcj-MY-FEe">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gcj-MY-FEe" id="jFP-GA-HQg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q5P-LJ-6wo">
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sua-3c-POC">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="Ymi-Fp-Ii2" kind="show" identifier="showTranscript" id="4Db-P8-75Q"/>
@@ -45,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="1079.7101449275362" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Transcript View Controller-->
         <scene sceneID="2FG-d1-bEw">
             <objects>
-                <viewController id="Ymi-Fp-Ii2" sceneMemberID="viewController">
+                <viewController id="Ymi-Fp-Ii2" customClass="ShowTranscriptViewController" customModule="Vocable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n9E-d3-Y05">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="2041" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--Preview Transcript View Controller-->
         <scene sceneID="wHD-vS-ePh">
             <objects>
-                <viewController id="gvb-rp-Zym" sceneMemberID="viewController">
+                <viewController id="gvb-rp-Zym" customClass="PreviewTranscriptViewController" customModule="Vocable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sHC-QZ-5pM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="2972" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Transcript View Controller-->
         <scene sceneID="40W-wC-bGX">
             <objects>
-                <viewController id="Ci8-gh-uMP" sceneMemberID="viewController">
+                <viewController id="Ci8-gh-uMP" customClass="AddTranscriptViewController" customModule="Vocable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Hm-Ep-WXH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
