@@ -14,6 +14,8 @@
 		80639C49245B3AB9006F8FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80639C48245B3AB9006F8FC2 /* Assets.xcassets */; };
 		80639C4C245B3AB9006F8FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80639C4A245B3AB9006F8FC2 /* LaunchScreen.storyboard */; };
 		80639C54245B3C85006F8FC2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C53245B3C85006F8FC2 /* CoreDataStack.swift */; };
+		80639C56245B3D3E006F8FC2 /* TranscriptRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */; };
+		80639C58245B3D79006F8FC2 /* Transcript+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		80639C4B245B3AB9006F8FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80639C4D245B3AB9006F8FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80639C53245B3C85006F8FC2 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptRepresentation.swift; sourceTree = "<group>"; };
+		80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transcript+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				80639C4D245B3AB9006F8FC2 /* Info.plist */,
 				80639C45245B3AB0006F8FC2 /* Vocable.xcdatamodeld */,
 				80639C53245B3C85006F8FC2 /* CoreDataStack.swift */,
+				80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */,
+				80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */,
 			);
 			path = Vocable;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 				80639C47245B3AB0006F8FC2 /* Vocable.xcdatamodeld in Sources */,
 				80639C3D245B3AB0006F8FC2 /* AppDelegate.swift in Sources */,
 				80639C3F245B3AB0006F8FC2 /* SceneDelegate.swift in Sources */,
+				80639C58245B3D79006F8FC2 /* Transcript+Convenience.swift in Sources */,
+				80639C56245B3D3E006F8FC2 /* TranscriptRepresentation.swift in Sources */,
 				80639C54245B3C85006F8FC2 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
