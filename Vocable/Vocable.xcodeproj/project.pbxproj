@@ -21,6 +21,7 @@
 		80639C5F245B5B67006F8FC2 /* AddTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C5E245B5B67006F8FC2 /* AddTranscriptViewController.swift */; };
 		80639C61245B5B72006F8FC2 /* ShowTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C60245B5B72006F8FC2 /* ShowTranscriptViewController.swift */; };
 		80639C63245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C62245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift */; };
+		80639C6B245B7ED7006F8FC2 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C6A245B7ED7006F8FC2 /* PDFCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		80639C5E245B5B67006F8FC2 /* AddTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTranscriptViewController.swift; sourceTree = "<group>"; };
 		80639C60245B5B72006F8FC2 /* ShowTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTranscriptViewController.swift; sourceTree = "<group>"; };
 		80639C62245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewTranscriptViewController.swift; sourceTree = "<group>"; };
+		80639C6A245B7ED7006F8FC2 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */,
 				80639C59245B3F1B006F8FC2 /* TranscriptController.swift */,
 				80639C5D245B5B48006F8FC2 /* View Controllers */,
+				80639C6A245B7ED7006F8FC2 /* PDFCreator.swift */,
 			);
 			path = Vocable;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				80639C47245B3AB0006F8FC2 /* Vocable.xcdatamodeld in Sources */,
 				80639C3D245B3AB0006F8FC2 /* AppDelegate.swift in Sources */,
 				80639C5A245B3F1B006F8FC2 /* TranscriptController.swift in Sources */,
+				80639C6B245B7ED7006F8FC2 /* PDFCreator.swift in Sources */,
 				80639C3F245B3AB0006F8FC2 /* SceneDelegate.swift in Sources */,
 				80639C58245B3D79006F8FC2 /* Transcript+Convenience.swift in Sources */,
 				80639C56245B3D3E006F8FC2 /* TranscriptRepresentation.swift in Sources */,

@@ -68,7 +68,7 @@ class TranscriptController {
             do {
                 let fetchRequest: NSFetchRequest<Transcript> = Transcript.fetchRequest()
                 
-                fetchRequest.predicate = NSPredicate(format: "identifier IN %@", identifiersToFetch)
+                fetchRequest.predicate = NSPredicate(format: "transcriptID IN %@", identifiersToFetch)
                 
                 let existingTranscripts = try context.fetch(fetchRequest)
                 for transcript in existingTranscripts {

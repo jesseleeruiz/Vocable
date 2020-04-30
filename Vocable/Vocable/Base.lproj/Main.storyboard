@@ -69,9 +69,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09n-Fg-PFl">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09n-Fg-PFl">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Preview" id="EgN-d5-GUd">
                                         <connections>
@@ -79,18 +78,42 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4AK-ro-8sJ"/>
-                                    <barButtonItem systemItem="action" id="xfi-Qo-9oQ"/>
+                                    <barButtonItem systemItem="action" id="xfi-Qo-9oQ">
+                                        <connections>
+                                            <action selector="shareButtonPressed:" destination="Ymi-Fp-Ii2" id="pFi-gc-3XP"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JfD-qy-e1J">
+                                <rect key="frame" x="20" y="140" width="374" height="665"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="09n-Fg-PFl" firstAttribute="leading" secondItem="W98-RC-aaf" secondAttribute="leading" id="2pN-J8-oCC"/>
+                            <constraint firstItem="W98-RC-aaf" firstAttribute="trailing" secondItem="JfD-qy-e1J" secondAttribute="trailing" constant="20" id="Jtd-Qa-5fB"/>
+                            <constraint firstItem="09n-Fg-PFl" firstAttribute="trailing" secondItem="W98-RC-aaf" secondAttribute="trailing" id="Psc-2y-Yah"/>
+                            <constraint firstItem="JfD-qy-e1J" firstAttribute="top" secondItem="W98-RC-aaf" secondAttribute="top" id="e4E-kP-gHU"/>
+                            <constraint firstItem="09n-Fg-PFl" firstAttribute="bottom" secondItem="W98-RC-aaf" secondAttribute="bottom" id="jm4-eO-FFb"/>
+                            <constraint firstItem="JfD-qy-e1J" firstAttribute="leading" secondItem="W98-RC-aaf" secondAttribute="leading" constant="20" id="rkZ-ea-SpU"/>
+                            <constraint firstItem="09n-Fg-PFl" firstAttribute="top" secondItem="JfD-qy-e1J" secondAttribute="bottom" constant="8" id="rnb-qk-Si7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="W98-RC-aaf"/>
                     </view>
                     <navigationItem key="navigationItem" id="vMn-et-upw"/>
+                    <connections>
+                        <outlet property="textView" destination="JfD-qy-e1J" id="ggf-QS-oI3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1c-2s-Ich" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2041" y="117"/>
+            <point key="canvasLocation" x="2040.5797101449277" y="116.51785714285714"/>
         </scene>
         <!--Preview Transcript View Controller-->
         <scene sceneID="wHD-vS-ePh">
@@ -99,13 +122,28 @@
                     <view key="view" contentMode="scaleToFill" id="sHC-QZ-5pM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35a-3h-fs4" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="35a-3h-fs4" secondAttribute="bottom" id="5nR-7h-rEi"/>
+                            <constraint firstItem="35a-3h-fs4" firstAttribute="trailing" secondItem="fba-7k-9Kz" secondAttribute="trailing" id="XC6-KN-oD2"/>
+                            <constraint firstItem="35a-3h-fs4" firstAttribute="leading" secondItem="fba-7k-9Kz" secondAttribute="leading" id="vPU-vx-97d"/>
+                            <constraint firstItem="35a-3h-fs4" firstAttribute="top" secondItem="fba-7k-9Kz" secondAttribute="top" id="xuW-mu-fvp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fba-7k-9Kz"/>
                     </view>
+                    <connections>
+                        <outlet property="pdfView" destination="35a-3h-fs4" id="Zcw-zl-aHU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgR-nJ-Ntr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="117"/>
+            <point key="canvasLocation" x="2971.0144927536235" y="116.51785714285714"/>
         </scene>
         <!--Add Transcript View Controller-->
         <scene sceneID="40W-wC-bGX">

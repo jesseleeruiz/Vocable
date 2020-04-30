@@ -20,7 +20,7 @@ extension Transcript {
     
     @discardableResult convenience init(title: String,
                                         text: String,
-                                        createdAt: Date = Date(),
+                                        createdAt: Date = NSDate.init(timeIntervalSince1970: 0) as Date,
                                         transcriptID: UUID = UUID(),
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
