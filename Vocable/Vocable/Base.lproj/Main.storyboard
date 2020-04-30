@@ -114,14 +114,76 @@
                     <view key="view" contentMode="scaleToFill" id="6Hm-Ep-WXH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Owe-LJ-sKl">
+                                <rect key="frame" x="20" y="140" width="374" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBV-mk-cf8">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="34"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdb-tO-QJv">
+                                        <rect key="frame" x="68" y="0.0" width="306" height="34"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7tD-cw-yNH">
+                                <rect key="frame" x="20" y="182" width="374" height="614"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-mj-qLr">
+                                <rect key="frame" x="20" y="804" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Rh-jF-B8a"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Start Recording" image="mic.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="Ci8-gh-uMP" eventType="touchUpInside" id="JIN-ch-2cd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LOT-mj-qLr" firstAttribute="trailing" secondItem="7tD-cw-yNH" secondAttribute="trailing" id="GUS-mv-aX9"/>
+                            <constraint firstItem="qRX-0q-Adp" firstAttribute="bottom" secondItem="LOT-mj-qLr" secondAttribute="bottom" constant="8" id="I16-Ma-jZS"/>
+                            <constraint firstItem="7tD-cw-yNH" firstAttribute="trailing" secondItem="Owe-LJ-sKl" secondAttribute="trailing" id="SVa-vc-5H0"/>
+                            <constraint firstItem="7tD-cw-yNH" firstAttribute="leading" secondItem="Owe-LJ-sKl" secondAttribute="leading" id="Ths-ym-Of5"/>
+                            <constraint firstItem="Owe-LJ-sKl" firstAttribute="leading" secondItem="qRX-0q-Adp" secondAttribute="leading" constant="20" id="Uja-IN-ban"/>
+                            <constraint firstItem="qRX-0q-Adp" firstAttribute="trailing" secondItem="Owe-LJ-sKl" secondAttribute="trailing" constant="20" id="VS9-9B-53k"/>
+                            <constraint firstItem="LOT-mj-qLr" firstAttribute="leading" secondItem="7tD-cw-yNH" secondAttribute="leading" id="W4c-Tw-lsD"/>
+                            <constraint firstItem="Owe-LJ-sKl" firstAttribute="top" secondItem="qRX-0q-Adp" secondAttribute="top" id="lcZ-e8-EdH"/>
+                            <constraint firstItem="LOT-mj-qLr" firstAttribute="top" secondItem="7tD-cw-yNH" secondAttribute="bottom" constant="8" id="vNM-Bn-dvn"/>
+                            <constraint firstItem="7tD-cw-yNH" firstAttribute="top" secondItem="Owe-LJ-sKl" secondAttribute="bottom" constant="8" id="wis-sg-dw5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qRX-0q-Adp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6b8-sU-Fct"/>
+                    <navigationItem key="navigationItem" id="6b8-sU-Fct">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yRr-DC-CeW">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="Ci8-gh-uMP" id="wJI-g3-gsN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="recordButton" destination="LOT-mj-qLr" id="vSG-HY-Ekh"/>
+                        <outlet property="textview" destination="7tD-cw-yNH" id="Aj0-J7-RiN"/>
+                        <outlet property="transcriptTitle" destination="tdb-tO-QJv" id="qoX-Dv-hOw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJi-jT-D0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="-575"/>
+            <point key="canvasLocation" x="2040.5797101449277" y="-575.22321428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZlZ-jc-WGM">
@@ -142,4 +204,7 @@
             <point key="canvasLocation" x="169.56521739130437" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mic.fill" catalog="system" width="108" height="128"/>
+    </resources>
 </document>

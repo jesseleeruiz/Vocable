@@ -159,7 +159,7 @@ class TranscriptController {
 //        put(entry: transcript)
 //    }
     
-    func deleteEntry(transcript: Transcript, context: NSManagedObjectContext) {
+    func deleteTranscript(transcript: Transcript, context: NSManagedObjectContext) {
         CoreDataStack.shared.mainContext.delete(transcript)
         deleteTranscriptFromServer(transcript: transcript)
         CoreDataStack.shared.save(context: context)
