@@ -1,5 +1,5 @@
 //
-//  TranscriptTableViewController.swift
+//  TranscriptViewController.swift
 //  Vocable
 //
 //  Created by Jesse Ruiz on 4/30/20.
@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-class TranscriptTableViewController: UITableViewController {
-    
+class TranscriptViewController: UIViewController {
+
     // MARK: - Properties
     let transcriptController = TranscriptController()
     var dateFormatter: DateFormatter {
@@ -41,6 +41,11 @@ class TranscriptTableViewController: UITableViewController {
         return frc
     }()
     
+    // MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyStateImage: UIImageView!
+    
+    // MARK: - View Controller Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -52,17 +57,23 @@ class TranscriptTableViewController: UITableViewController {
             tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
         }
     }
-    
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
+}
+
+extension TranscriptViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if fetchedResultsController.sections?[section].numberOfObjects == 0 {
+            emptyStateImage.isHidden = false
+        } else {
+            emptyStateImage.isHidden = true
+        }
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TranscriptCell", for: indexPath)
         
         cell.textLabel?.text = fetchedResultsController.object(at: indexPath).title
@@ -70,17 +81,16 @@ class TranscriptTableViewController: UITableViewController {
         let myTimeInterval = TimeInterval(timestamp)
         let date = Date(timeIntervalSince1970: myTimeInterval)
         cell.detailTextLabel?.text = "Created on \(dateFormatter.string(from: date))"
-        
+                
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let transcript = fetchedResultsController.object(at: indexPath)
             transcriptController.deleteTranscript(transcript: transcript, context: CoreDataStack.shared.mainContext)
         }
     }
-    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,55 +107,54 @@ class TranscriptTableViewController: UITableViewController {
         }
     }
 }
+
+extension TranscriptViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
     
-    extension TranscriptTableViewController: NSFetchedResultsControllerDelegate {
-        
-        func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            tableView.beginUpdates()
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.insertRows(at: [newIndexPath], with: .fade)
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        case .move:
+            guard let indexPath = indexPath,
+                let newIndexPath = newIndexPath else { return }
+            tableView.moveRow(at: indexPath, to: newIndexPath)
+        case .update:
+            guard let indexPath = indexPath else { return }
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        @unknown default:
+            fatalError()
         }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
         
-        func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            tableView.endUpdates()
-        }
+        let indexSet = IndexSet(integer: sectionIndex)
         
-        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
-                        didChange anObject: Any,
-                        at indexPath: IndexPath?,
-                        for type: NSFetchedResultsChangeType,
-                        newIndexPath: IndexPath?) {
-            switch type {
-            case .insert:
-                guard let newIndexPath = newIndexPath else { return }
-                tableView.insertRows(at: [newIndexPath], with: .fade)
-            case .delete:
-                guard let indexPath = indexPath else { return }
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            case .move:
-                guard let indexPath = indexPath,
-                    let newIndexPath = newIndexPath else { return }
-                tableView.moveRow(at: indexPath, to: newIndexPath)
-            case .update:
-                guard let indexPath = indexPath else { return }
-                tableView.reloadRows(at: [indexPath], with: .fade)
-            @unknown default:
-                fatalError()
-            }
+        switch type {
+        case .insert:
+            tableView.insertSections(indexSet, with: .fade)
+        case .delete:
+            tableView.deleteSections(indexSet, with: .fade)
+        default:
+            return
         }
-        
-        func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
-                        didChange sectionInfo: NSFetchedResultsSectionInfo,
-                        atSectionIndex sectionIndex: Int,
-                        for type: NSFetchedResultsChangeType) {
-            
-            let indexSet = IndexSet(integer: sectionIndex)
-            
-            switch type {
-            case .insert:
-                tableView.insertSections(indexSet, with: .fade)
-            case .delete:
-                tableView.deleteSections(indexSet, with: .fade)
-            default:
-                return
-            }
-        }
+    }
 }

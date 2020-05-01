@@ -17,11 +17,11 @@
 		80639C56245B3D3E006F8FC2 /* TranscriptRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */; };
 		80639C58245B3D79006F8FC2 /* Transcript+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */; };
 		80639C5A245B3F1B006F8FC2 /* TranscriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C59245B3F1B006F8FC2 /* TranscriptController.swift */; };
-		80639C5C245B5B43006F8FC2 /* TranscriptTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C5B245B5B43006F8FC2 /* TranscriptTableViewController.swift */; };
 		80639C5F245B5B67006F8FC2 /* AddTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C5E245B5B67006F8FC2 /* AddTranscriptViewController.swift */; };
 		80639C61245B5B72006F8FC2 /* ShowTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C60245B5B72006F8FC2 /* ShowTranscriptViewController.swift */; };
 		80639C63245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C62245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift */; };
 		80639C6B245B7ED7006F8FC2 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C6A245B7ED7006F8FC2 /* PDFCreator.swift */; };
+		80639C6F245BAB72006F8FC2 /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80639C6E245BAB72006F8FC2 /* TranscriptViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +37,11 @@
 		80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptRepresentation.swift; sourceTree = "<group>"; };
 		80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transcript+Convenience.swift"; sourceTree = "<group>"; };
 		80639C59245B3F1B006F8FC2 /* TranscriptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptController.swift; sourceTree = "<group>"; };
-		80639C5B245B5B43006F8FC2 /* TranscriptTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTableViewController.swift; sourceTree = "<group>"; };
 		80639C5E245B5B67006F8FC2 /* AddTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTranscriptViewController.swift; sourceTree = "<group>"; };
 		80639C60245B5B72006F8FC2 /* ShowTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTranscriptViewController.swift; sourceTree = "<group>"; };
 		80639C62245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewTranscriptViewController.swift; sourceTree = "<group>"; };
 		80639C6A245B7ED7006F8FC2 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		80639C6E245BAB72006F8FC2 /* TranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,19 +74,13 @@
 		80639C3B245B3AB0006F8FC2 /* Vocable */ = {
 			isa = PBXGroup;
 			children = (
-				80639C3C245B3AB0006F8FC2 /* AppDelegate.swift */,
-				80639C3E245B3AB0006F8FC2 /* SceneDelegate.swift */,
-				80639C42245B3AB0006F8FC2 /* Main.storyboard */,
-				80639C48245B3AB9006F8FC2 /* Assets.xcassets */,
-				80639C4A245B3AB9006F8FC2 /* LaunchScreen.storyboard */,
-				80639C4D245B3AB9006F8FC2 /* Info.plist */,
-				80639C45245B3AB0006F8FC2 /* Vocable.xcdatamodeld */,
-				80639C53245B3C85006F8FC2 /* CoreDataStack.swift */,
-				80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */,
-				80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */,
-				80639C59245B3F1B006F8FC2 /* TranscriptController.swift */,
+				80639C72245BDE14006F8FC2 /* Core Data Stack */,
 				80639C5D245B5B48006F8FC2 /* View Controllers */,
-				80639C6A245B7ED7006F8FC2 /* PDFCreator.swift */,
+				80639C71245BDE04006F8FC2 /* Model Controller */,
+				80639C73245BDE26006F8FC2 /* Storyboards */,
+				80639C70245BDDFB006F8FC2 /* Helper */,
+				80639C74245BDE32006F8FC2 /* Resources */,
+				80639C4D245B3AB9006F8FC2 /* Info.plist */,
 			);
 			path = Vocable;
 			sourceTree = "<group>";
@@ -94,12 +88,58 @@
 		80639C5D245B5B48006F8FC2 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				80639C5B245B5B43006F8FC2 /* TranscriptTableViewController.swift */,
+				80639C6E245BAB72006F8FC2 /* TranscriptViewController.swift */,
 				80639C5E245B5B67006F8FC2 /* AddTranscriptViewController.swift */,
 				80639C60245B5B72006F8FC2 /* ShowTranscriptViewController.swift */,
 				80639C62245B5B7D006F8FC2 /* PreviewTranscriptViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		80639C70245BDDFB006F8FC2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				80639C6A245B7ED7006F8FC2 /* PDFCreator.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		80639C71245BDE04006F8FC2 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				80639C59245B3F1B006F8FC2 /* TranscriptController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		80639C72245BDE14006F8FC2 /* Core Data Stack */ = {
+			isa = PBXGroup;
+			children = (
+				80639C45245B3AB0006F8FC2 /* Vocable.xcdatamodeld */,
+				80639C53245B3C85006F8FC2 /* CoreDataStack.swift */,
+				80639C55245B3D3E006F8FC2 /* TranscriptRepresentation.swift */,
+				80639C57245B3D79006F8FC2 /* Transcript+Convenience.swift */,
+			);
+			path = "Core Data Stack";
+			sourceTree = "<group>";
+		};
+		80639C73245BDE26006F8FC2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				80639C42245B3AB0006F8FC2 /* Main.storyboard */,
+				80639C4A245B3AB9006F8FC2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		80639C74245BDE32006F8FC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				80639C3C245B3AB0006F8FC2 /* AppDelegate.swift */,
+				80639C3E245B3AB0006F8FC2 /* SceneDelegate.swift */,
+				80639C48245B3AB9006F8FC2 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +224,7 @@
 				80639C56245B3D3E006F8FC2 /* TranscriptRepresentation.swift in Sources */,
 				80639C61245B5B72006F8FC2 /* ShowTranscriptViewController.swift in Sources */,
 				80639C54245B3C85006F8FC2 /* CoreDataStack.swift in Sources */,
-				80639C5C245B5B43006F8FC2 /* TranscriptTableViewController.swift in Sources */,
+				80639C6F245BAB72006F8FC2 /* TranscriptViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

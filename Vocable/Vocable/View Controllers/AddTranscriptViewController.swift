@@ -9,7 +9,7 @@
 import UIKit
 import Speech
 
-class AddTranscriptViewController: UIViewController, SFSpeechRecognizerDelegate {
+class AddTranscriptViewController: UIViewController, SFSpeechRecognizerDelegate, UITextFieldDelegate {
     
     // MARK: - Properties
     var transcript: Transcript? {
@@ -33,6 +33,7 @@ class AddTranscriptViewController: UIViewController, SFSpeechRecognizerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        self.transcriptTitle.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,11 +121,17 @@ class AddTranscriptViewController: UIViewController, SFSpeechRecognizerDelegate 
         textview.layer.borderWidth = 0.5
         textview.layer.cornerRadius = 4.0
         
+        textFieldShouldReturn(transcriptTitle)
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
         
         transcriptTitle.text = transcript?.text
         textview.text = transcript?.text
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     // MARK: - SFSpeechRecognizerDelegate
