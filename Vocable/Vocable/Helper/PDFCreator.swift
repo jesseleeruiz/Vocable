@@ -39,7 +39,6 @@ class PDFCreator: NSObject {
             let titleBottom = configureTitle(pageRect: pageRect)
             configureBodyText(pageRect: pageRect, textTop: titleBottom + 18.0)
         }
-        
         return data
     }
     

@@ -25,9 +25,7 @@ class TranscriptController {
     }
     
     func fetchTranscriptsFromServer(completion: @escaping () -> Void = { }) {
-        
         let requestURL = baseURL.appendingPathExtension("json")
-        
         let request = URLRequest(url: requestURL)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
@@ -149,15 +147,6 @@ class TranscriptController {
         CoreDataStack.shared.save(context: context)
         put(transcript: transcript)
     }
-    
-//    func updateEntry(transcript: Transcript, with title: String, bodyText: String, mood: String, context: NSManagedObjectContext) {
-//
-//        transcript.title = title
-//        transcript.bodyText = bodyText
-//        transcript.mood = mood
-//        CoreDataStack.shared.save(context: context)
-//        put(entry: transcript)
-//    }
     
     func deleteTranscript(transcript: Transcript, context: NSManagedObjectContext) {
         CoreDataStack.shared.mainContext.delete(transcript)

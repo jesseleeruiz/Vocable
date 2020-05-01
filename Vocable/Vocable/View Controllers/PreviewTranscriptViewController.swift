@@ -25,5 +25,4 @@ class PreviewTranscriptViewController: UIViewController {
             pdfView.autoScales = true
         }
     }
-    
 }
